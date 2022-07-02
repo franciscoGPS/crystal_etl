@@ -24,7 +24,6 @@ export default class extends Controller {
     var data = new FormData();
 
     $.each(this.uploadInputTarget.files, function(i, file) {
-      debugger
         data.append('source_file:lucky_file', file);
     });
 
@@ -52,7 +51,7 @@ export default class extends Controller {
         "token": document.head.querySelector('meta[name="csrf-token"]').content,
       },
       success: function (data) {
-
+        console.log(data);
         console.log("Success ");
       },
       error: function (error) {
