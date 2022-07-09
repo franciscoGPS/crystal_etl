@@ -20,7 +20,7 @@ class Home::IndexPage < MainLayout
     end
     div class: "row d-flex justify-content-center" do
       div class: "col-xs-12 col-sm-8" do
-        div id: "editor" do
+        div id: "luckysheet" do
           text "O bien, puedes agregar aquí tu formato"
         end
       end

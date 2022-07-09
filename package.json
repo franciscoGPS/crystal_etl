@@ -3,6 +3,7 @@
   "private": true,
   "dependencies": {
     "@rails/ujs": "^6.0.0",
+    "d3": "^7.6.1",
     "jquery": "^3.6.0",
     "modern-normalize": "^1.1.0",
     "stimulus": "^3.0.1",

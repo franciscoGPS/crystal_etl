@@ -1,5 +1,6 @@
 abstract class MainLayout
   include Lucky::HTMLPage
+  include CommonHeader
 
   abstract def content
   abstract def page_title
@@ -17,7 +18,9 @@ abstract class MainLayout
 
     html lang: "en" do
       mount Shared::LayoutHead, page_title: page_title
-
+      head do
+        common_header
+      end
       body do
         mount Shared::FlashMessages, context.flash
         content

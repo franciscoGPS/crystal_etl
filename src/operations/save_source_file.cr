@@ -1,7 +1,7 @@
 class SaveSourceFile < SourceFile::SaveOperation
 
   param_key :source_file
-  permit_columns file, file_name, file_type, confirmed, public_id, id, md5_sum
+  permit_columns file, file_name, file_type, public_id, id, md5_sum
 
   SUPPORTED_FORMATS = [/csv/i]
 
