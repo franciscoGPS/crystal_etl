@@ -14,9 +14,7 @@ class SourceFile::Create < BrowserAction
         
         lucky_file = Shrine::UploadedFile.new(source_file.file, "store")
         dataframe = Crysda.read_csv(lucky_file.url, separator: ',',  na_value: "")
-        SourceFileQuery.new.each do |source_file|
-          pp source_file
-        end
+        
         json({ data: build_json_response(dataframe),
                title: source_file.file_name,
                metadata: build_dataframe_stats(dataframe)})

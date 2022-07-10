@@ -1,6 +1,8 @@
 
 class Home::IndexPage < MainLayout
+
   needs operation : CreateSourceFile
+  needs files : SourceFileQuery
 
   def content
     div class: "row d-flex justify-content-center h-100 mt-5" do
@@ -12,16 +14,21 @@ class Home::IndexPage < MainLayout
           div class: "card-body" do
             render_pdf_upload_sale_receipt
           end
-          div class: "card-footer" do
-           
-          end
         end
       end
     end
-    div class: "row d-flex justify-content-center" do
+    div data_controller: "source_files", class: "row d-flex justify-content-center" do
       div class: "col-xs-12 col-sm-8" do
-        div id: "luckysheet" do
-          text "O bien, puedes agregar aquí tu formato"
+        files.each do |source_file|
+          lucky_file = Shrine::UploadedFile.new(source_file.file, "store")
+          df = Crysda.read_csv(lucky_file.url, separator: ',',  na_value: "")
+          div class: "grid" do
+            df.cols.each_with_index do |col, index|
+              div class: "grid-item" do
+                text col.to_s
+              end
+            end
+          end  
         end
       end
     end
