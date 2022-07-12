@@ -14,6 +14,12 @@ export default class extends Controller {
   // Attach this controller with something like `<div data-controller="hello"></div>`.
   initialize() {
     console.log("Hello from the source_files index controller!");
+    var elem = document.querySelector('.grid');
+    var pckry = new Packery( elem, {
+      // options
+      itemSelector: '.grid-item',
+      gutter: 10
+    });
   }
 
   // Can be called from within this file with `this.update_stock()`, or in an action in your HTML.

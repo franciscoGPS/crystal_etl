@@ -17,7 +17,7 @@ class Home::IndexPage < MainLayout
         end
       end
     end
-    div data_controller: "source_files", class: "row d-flex justify-content-center" do
+    div data_controller: "source-files", class: "row d-flex justify-content-center" do
       div class: "col-xs-12 col-sm-8" do
         files.each do |source_file|
           lucky_file = Shrine::UploadedFile.new(source_file.file, "store")
