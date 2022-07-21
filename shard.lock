@@ -37,7 +37,7 @@ shards:
     version: 0.4.3
 
   crysda:
-    git: https://github.com/naqvis/crysda.git
+    git: https://github.com/franciscogps/crysda.git
     version: 0.1.2
 
   crystar:

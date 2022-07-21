@@ -10,6 +10,7 @@ module CommonHeader
     js_link "https://cdn.jsdelivr.net/npm/luckysheet/dist/plugins/js/plugin.js"
     js_link "https://cdn.jsdelivr.net/npm/luckysheet@2.1.13/dist/luckysheet.umd.js"
     js_link "https://unpkg.com/packery@2/dist/packery.pkgd.min.js"
+    js_link "https://unpkg.com/draggabilly@3/dist/draggabilly.pkgd.min.js"
   end
 
   def load_css

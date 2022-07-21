@@ -8,7 +8,6 @@ export default class extends Controller {
   // Attach to an element with `data-hello-target="test"`.
   static targets = ["uploaded_files", "uploadInput", "upload_form"];
   
-
   // Called whenever the controller is attached to an element on the page.
   // Attach this controller with something like `<div data-controller="hello"></div>`.
   initialize() {

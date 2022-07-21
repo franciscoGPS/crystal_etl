@@ -1,6 +1,5 @@
 import { Controller } from "stimulus";
-import $ from "jquery";
-
+import * as d3 from "d3";
 
 export default class extends Controller {
 
@@ -10,16 +9,46 @@ export default class extends Controller {
     return [""];
   }
 
+  static values = {
+    columnMetadata: Array,
+    columnName: String,
+  }
+
   // Called whenever the controller is attached to an element on the page.
   // Attach this controller with something like `<div data-controller="hello"></div>`.
   initialize() {
     console.log("Hello from the source_files index controller!");
-    var elem = document.querySelector('.grid');
-    var pckry = new Packery( elem, {
+    const packery = this.initPackery()
+    const draggies = this.initDraggie(packery)
+  }
+  
+  initPackery() {
+    var elem = document.querySelector('.grid')
+    return new Packery( elem, {
       // options
       itemSelector: '.grid-item',
-      gutter: 10
+      columnWidth: 100,
+      gutter: 0
     });
+  }
+
+  initDraggie(packery) {
+    // if you have multiple .draggable elements
+    // get all draggie elements
+    var draggableElems = document.querySelectorAll('.draggable')
+    // array of Draggabillies
+    var draggies = []
+    // init Draggabillies
+    draggableElems.forEach((elem) => {
+      var draggie = new Draggabilly( elem, {
+        // options...
+      });
+      packery.bindDraggabillyEvents( draggie )
+      draggies.push( draggie )
+    })
+
+    
+    return draggies
   }
 
   // Can be called from within this file with `this.update_stock()`, or in an action in your HTML.

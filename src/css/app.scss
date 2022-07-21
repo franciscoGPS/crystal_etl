@@ -15,6 +15,7 @@
 // Add your own components and import them like this:
 //
 // @import "components/my_new_component";
+ @import "components/source_files.scss";
 
 // Default Lucky styles.
 // Delete these when you're ready to bring in your own CSS.
@@ -25,6 +26,7 @@ body {
   margin: 0 auto;
   max-width: 800px;
   padding: 20px 40px;
+  background-color: #f4f3ee;
 }
 
 label, input {

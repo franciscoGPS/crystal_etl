@@ -30,7 +30,8 @@ dependencies:
     github: luckyframework/lucky_task
     version: ~> 0.1.1
   crysda:
-    github: naqvis/CrysDA
+    github: franciscoGPS/CrysDA
+    branch: array-na-vals
   shrine:
     github: jetrockets/shrine.cr  
     version: ~> 0.6.4
